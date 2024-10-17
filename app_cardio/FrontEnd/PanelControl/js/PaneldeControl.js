@@ -11,7 +11,7 @@ $('#CerrarSesion').click(function(event){
 $('#ControlPanelUser').click(function(event) {
     if (!ControlUsuarios){
         $('#n_img').addClass('hidden');
-        // listarUsers();
+        listarUsers();
         ControlUsuarios = true;
     } else {
         ControlUsuarios = false;

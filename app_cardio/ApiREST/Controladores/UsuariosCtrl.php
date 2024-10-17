@@ -36,7 +36,28 @@
 
         private static function Listar($obj)
         {
+            $consulta = "SELECT 
+                            u.usuario as lis_usuario, 
+                            u.clave as lis_clave, 
+                            u.rol as lis_rol, 
+                            u.estado as lis_estado 
+                        FROM usuarios as u";
 
+            $sentencia = self::$pdofull->prepare($consulta);
+
+            if ($sentencia->execute()) {
+                $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+                if ($resultado) {
+                    $obj->respuesta = array(
+                        "estado"    => 1,
+                        "lusuarios" => $resultado
+                    );
+                } else {
+                    $obj->respuesta = null;
+                }
+            } else {
+                $obj->respuesta = null;
+            }
         }
 
         private static function Registrar($obj)
@@ -77,7 +98,28 @@
         
         private static function Actualizar($obj)
         {
-            
+            $usuario = $_POST['datos'];
+            $comando = "UPDATE usuarios 
+                        SET 
+                            usuarios.clave  = ?,
+                            usuarios.estado = ?,
+                            usuarios.rol    = ?
+                        WHERE usuarios.usuario = ?";
+
+            $sentencia = self::$pdofull->prepare($comando);
+            $sentencia->bindParam ( 1, $usuario['clave'] );
+            $sentencia->bindParam ( 2, $usuario['estado'] );
+            $sentencia->bindParam ( 3, $usuario['rol'] );
+            $sentencia->bindParam ( 4, $usuario['username'] );
+
+            $resultado = $sentencia->execute();
+
+            if ($resultado) {
+                $obj->respuesta = array (
+                    'estado'  => 1,
+                    'mensaje' => "Usuario actualizado con exito..."
+                );
+            }
         }
         
         private static function Logear($obj)
