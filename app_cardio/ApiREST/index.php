@@ -2,7 +2,10 @@
     /**
      * Cargamos todos los controladores...
      */
+    
     require_once 'Controladores/UsuariosCtrl.php';
+    require_once 'Controladores/BarriosCtrl.php';
+    require_once 'Controladores/CiudadesCtrl.php';
 	
 	header ( 'content-type: application/json; charset=utf-8' );             // * Definimos que sera una aplicación de tipo JSON
 	header ( 'Access-Control-Allow-Origin: *' );                            // * Permitimos el acceso a todos los clientes
@@ -16,7 +19,9 @@
         $recurso  = array_shift( $peticion );                               // Obtenemos el recurso a solicitar
 
         $recursos_existentes = array(                                       // Definimos los recursos existentes y validamos que la solicitud exista
-            'UsuariosCtrl'
+            'UsuariosCtrl',
+            'BarriosCtrl',
+            'CiudadesCtrl'
         );
 
         if ( in_array( $recurso, $recursos_existentes ) ) {
@@ -25,6 +30,12 @@
                 switch ($recurso) {
                     case 'UsuariosCtrl':
                         $instancia = new UsuariosCtrl( $peticion );
+                        break;
+                    case 'BarriosCtrl':
+                        $instancia = new BarriosCtrl( $peticion );
+                        break;
+                    case 'CiudadesCtrl':
+                        $instancia = new CiudadesCtrl( $peticion );
                         break;
                 }
                 $respuesta = $instancia->respuesta;

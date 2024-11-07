@@ -1,4 +1,6 @@
 var ControlUsuarios = false;
+var ControlBarrios  = false;
+var ControlCiudades = false;
 
 var UsuarioActual   = jQuery.parseJSON(sessionStorage.getItem('userLogin'));
 
@@ -19,6 +21,27 @@ $('#ControlPanelUser').click(function(event) {
     }
 });
 
+$('#ControlPanelBarrio').click(function(event) {
+    if (!ControlBarrios){
+        $('#n_img').addClass('hidden');
+        listarBarrios();
+        ControlBarrios = true;
+    } else {
+        ControlBarrios = false;
+        $('#n_img').removeClass('hidden');
+    }
+});
+
+$('#ControlPanelCiudad').click(function(event) {
+	if(!ControlCiudades){
+		$('#n_img').addClass('hidden');
+		listarCiudad();
+		ControlCiudades = true;
+	}else{
+		ControlCiudades = false;
+   		$('#n_img').removeClass('hidden');
+	}
+});
 
 jQuery(document).ready(function(){
     $(".oculto").hide();              

@@ -16,6 +16,31 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a id="ControlPanelUser" href="#cpusuario" class="inf">Usuarios</a></li>
+                <li><a id="ControlPanelPaciente" href="#cppaciente" class="inf">Pacientes</a></li>
+                <li><a id="ControlPanelCum_Programa" href="#cpcum_programas" class="inf">Complimiento Programa</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">Patología de Riesgo <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a id="ControlPanelHipertension_Arterial" href="#cphipertension_arterial" class="inf">Hipertensión Arterial</a></li>
+                        <li><a id="ControlPanelHipercolesterolemia" href="#cphipercolesterolemia" class="inf">Hipercolesterolemia</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a id="ControlPanelDiabetes" href="#cpdiabetes" class="inf">Diabetes</a></li>
+                        <li><a id="ControlPanelObesidad" href="#cpobesidad" class="inf">Obesidad</a></li>
+                    </ul>
+                </li>
+                
+                <li><a id="ControlPanelMedicamento" href="#cpmedicamento" class="inf">Medicamentos</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false">Opciones <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li> <a id="ControlPanelBarrio" href="#cpbarrio" class="inf">Barrios</a></li>
+                        <li> <a id="ControlPanelCiudad" href="#cpciudad" class="inf">Ciudades</a></li>
+                    </ul>
+                </li>
+
                 <li><a id="CerrarSesion">Salir</a></li>
             </ul>
         </div>
@@ -129,5 +154,144 @@
     </div>
 </div>
 
+<!-- -------------------------------------------------- BARRIOS ---------------------------------------------------- -->
+
+<div id="cpbarrio" class="container center-block oculto">
+    <div id="alertas_barrios"> </div>
+  
+    <button class="btn btn-primary agregar pull-right" id="agregarBarrio" style="border-radius: 20px 20px 20px 20px; 
+    -moz-border-radius: 20px 20px 20px 20px; -webkit-border-radius: 20px 20px 20px 20px;">Nuevo Barrio <span
+        class="glyphicon glyphicon-plus"></span></button>
+
+    <h1 class="blue center title" style="margin-top: 40px; border-radius: 20px 20px 0px 0px; 
+    -moz-border-radius: 20px 20px 0px 0px; -webkit-border-radius: 20px 20px 0px 0px;">Gestion y Control de Barrios</h1>
+    
+    <div class="container">
+  
+      <form class="form-horizontal hidden" id="EditarBarrio">
+  
+        <div class="form-group">
+          <label for="editbarid" class="col-sm-offset-3 col-sm-2 control-label">Barrio:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="editbarid" placeholder="Id Barrio" required disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="editbarnom" class="col-sm-offset-3 col-sm-2 control-label">Nombre:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="editbarnom" placeholder="Nombre" required>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <button type="button" class="btn btn-default" id="CancelarActualizarBarrio">Cancelar</button>
+          <button type="submit" class="btn btn-success">Actualizar</button>
+        </div>
+      </form>
+  
+      <form class="form-horizontal hidden" id="CrearNuevoBarrio">
+  
+        <div class="form-group">
+          <label for="nombre" class="col-sm-offset-3 col-sm-2 control-label">Nombre:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="insbarnom" placeholder="Nombre" required>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <button type="button" class="btn btn-default" id="CancelarCrearBarrio">Cancelar</button>
+          <button type="submit" class="btn btn-success">Crear</button>
+        </div>
+      </form>
+    </div>
+  
+    <div class="table-responsive">
+      <table id="barrio_table" class="table table-hover">
+        <thead>
+          <tr class="blue">
+            <td>Barrio</td>
+            <td>Nombre</td>
+            <td>Editar</td>
+          </tr>
+        </thead>
+        <tbody id="Barrios_detalle">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<!-- -------------------------------------------------- CIUDADES ---------------------------------------------------- -->
+
+<div id="cpciudad" class="container center-block oculto">
+    <div id="alertas_ciudades"> </div>
+  
+    <h1 class="blue center title">Gestion y Control de Ciudades</h1>
+    <button class="btn btn-primary agregar" id="agregarCiudad">Nueva Ciudad <span
+        class="glyphicon glyphicon-plus"></span></button>
+  
+    <div class="container">
+  
+      <form class="form-horizontal hidden" id="EditarCiudad">
+  
+        <div class="form-group">
+          <label for="editciudad" class="col-sm-offset-3 col-sm-2 control-label">Ciudad:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="editciudad" placeholder="Id Ciudad" required disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="editnomciu" class="col-sm-offset-3 col-sm-2 control-label">Nombre:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="editnomciu" placeholder="Nombre">
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <button type="button" class="btn btn-default" id="CancelarActualizarCiudad">Cancelar</button>
+          <button type="submit" class="btn btn-success">Actualizar</button>
+        </div>
+      </form>
+  
+      <form class="form-horizontal hidden" id="CrearNuevoCiudad">
+  
+        <div class="form-group">
+          <label for="insciuid" class="col-sm-offset-3 col-sm-2 control-label">Ciudad:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="insciuid" placeholder="Id Ciudad" required>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="insciunom" class="col-sm-offset-3 col-sm-2 control-label">Nombre:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="insciunom" placeholder="Nombre" required>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <button type="button" class="btn btn-default" id="CancelarCrearCiudad">Cancelar</button>
+          <button type="submit" class="btn btn-success">Crear</button>
+        </div>
+      </form>
+    </div>
+  
+    <div class="table-responsive">
+      <table id="ciudad_table" class="table table-hover">
+        <thead>
+          <tr class="blue">
+            <td>Ciudad</td>
+            <td>Nombre</td>
+            <td>Editar</td>
+          </tr>
+        </thead>
+        <tbody id="Ciudades_detalle">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
 <script src="js/PaneldeControl.js"></script>
 <script src="js/PaneldeControlUsers.js"></script>
+<script src="js/PaneldeControlBarrios.js"></script>
+<script src="js/PaneldeControlCiudades.js"></script>
