@@ -6,6 +6,10 @@
     require_once 'Controladores/UsuariosCtrl.php';
     require_once 'Controladores/BarriosCtrl.php';
     require_once 'Controladores/CiudadesCtrl.php';
+    require_once 'Controladores/MedicamentosCtrl.php';
+    require_once 'Controladores/PacientesCtrl.php';
+
+
 	
 	header ( 'content-type: application/json; charset=utf-8' );             // * Definimos que sera una aplicación de tipo JSON
 	header ( 'Access-Control-Allow-Origin: *' );                            // * Permitimos el acceso a todos los clientes
@@ -21,7 +25,9 @@
         $recursos_existentes = array(                                       // Definimos los recursos existentes y validamos que la solicitud exista
             'UsuariosCtrl',
             'BarriosCtrl',
-            'CiudadesCtrl'
+            'CiudadesCtrl',
+            'MedicamentosCtrl',
+            'PacientesCtrl'
         );
 
         if ( in_array( $recurso, $recursos_existentes ) ) {
@@ -36,6 +42,12 @@
                         break;
                     case 'CiudadesCtrl':
                         $instancia = new CiudadesCtrl( $peticion );
+                        break;
+                    case 'MedicamentosCtrl':
+                        $instancia = new MedicamentosCtrl( $peticion );
+                        break;
+                    case 'PacientesCtrl':
+                        $instancia = new PacientesCtrl( $peticion );
                         break;
                 }
                 $respuesta = $instancia->respuesta;

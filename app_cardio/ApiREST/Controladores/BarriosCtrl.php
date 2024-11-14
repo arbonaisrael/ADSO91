@@ -35,7 +35,7 @@
 						barrios.id_barrio AS lis_id_barrio,
 					    barrios.nombre AS lis_nombre
 						FROM
-						barrios";
+						barrios ORDER BY barrios.nombre ASC";
 			$sentencia = Self::$pdofull->prepare($comando);
 			if ($sentencia->execute()) {
 				$resultado = $sentencia->fetchAll ( PDO::FETCH_ASSOC );
