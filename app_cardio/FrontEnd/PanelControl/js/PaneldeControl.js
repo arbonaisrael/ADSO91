@@ -83,25 +83,32 @@ jQuery(document).ready(function () {
 
 
 jQuery(document).ready(function () {
-    $('#npfec_nac').datetimepicker({
+    
+    $('.IEfec_nac').datetimepicker({
         format: 'YYYY-MM-DD'
+    }).on('dp.change', function(e){ 
+        var formatedValue = e.date.format(e.date._f);
+        $('#npedad').val(calcularAnos(formatedValue)); 
     });
 
-    $('#npfec_nac').on('dp.onchange', function(e){ 
+    $('.AEfec_nac').datetimepicker({
+        format: 'YYYY-MM-DD'
+    }).on('dp.change', function(e){ 
         var formatedValue = e.date.format(e.date._f);
-        console.log(this.value);
-    })
-        
+        $('#epedad').val(calcularAnos(formatedValue)); 
+    });
 
 });
 
 
 function calcularAnos(fechaNacimiento) {
-    var today = new Date();
-    //Restamos los años
-    var anos = today.getFullYear() - ano;
-    // Si no ha llegado su cumpleaños le restamos el año por cumplir
-    if (fechaNacimiento.getMonth() > (today.getMonth()) || fechaNacimiento.getDay() > today.getDay())
-        anos--;
-    return anos;
+    var hoy         = new Date();
+    var fnacimiento = new Date(fechaNacimiento)
+    var edad        = hoy.getFullYear() - fnacimiento.getFullYear();
+    var mes         = hoy.getMonth() - fnacimiento.getMonth();
+
+    if (mes < 0 || (mes === 0 && hoy.getDate() < fnacimiento.getDate())) {
+        edad--;
+    }        
+    return edad;
 }
