@@ -1,8 +1,12 @@
-var ControlUsuarios = false;
-var ControlBarrios = false;
-var ControlCiudades = false;
-var ControlMedicamentos = false;
-var ControlPacientes = false;
+var ControlUsuarios              = false;
+var ControlBarrios               = false;
+var ControlCiudades              = false;
+var ControlMedicamentos          = false;
+var ControlPacientes             = false;
+var ControlCum_Programas         = false;
+var ControlHipertension_Arterial = false;
+var ControlHipercolesterolemia   = false;
+var ControlDeabetes              = false;
 
 var UsuarioActual = jQuery.parseJSON(sessionStorage.getItem('userLogin'));
 
@@ -56,6 +60,42 @@ $('#ControlPanelPaciente').click(function (event) {
     } else {
         ControlPacientes = false;
     }
+});
+
+$('#ControlPanelCum_Programa').click(function(event) {
+	if(!ControlCum_Programas){
+		listarCum_Programa();
+		ControlCum_Programas = true;
+	}else{
+		ControlCum_Programas = false;
+	}
+});
+
+$('#ControlPanelHipertension_Arterial').click(function(event) {
+	if(!ControlHipertension_Arterial){
+		listarHipertension_Arterial();
+		ControlHipertension_Arterial = true;
+	}else{
+		ControlHipertension_Arterial = false;
+	}
+});
+
+$('#ControlPanelHipercolesterolemia').click(function(event) {
+	if(!ControlHipercolesterolemia){
+		listarHipercolesterolemia();
+		ControlHipercolesterolemia = true;
+	}else{
+		ControlHipercolesterolemia = false;
+	}
+});
+
+$('#ControlPanelDeabetes').click(function(event) {
+	if(!ControlDeabetes){
+		listarDeabetes();
+		ControlDeabetes = true;
+	}else{
+		ControlDeabetes = false;
+	}
 });
 
 jQuery(document).ready(function () {

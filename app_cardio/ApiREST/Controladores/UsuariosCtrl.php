@@ -36,12 +36,23 @@
 
         private static function Listar($obj)
         {
-            $consulta = "SELECT 
-                            u.usuario as lis_usuario, 
-                            u.clave as lis_clave, 
-                            u.rol as lis_rol, 
-                            u.estado as lis_estado 
-                        FROM usuarios as u";
+            $dato_usuario  = $_POST['datos'];
+
+            if ($dato_usuario[0]['rol']  == 1) {
+                $consulta = "SELECT 
+                                u.usuario as lis_usuario, 
+                                u.clave as lis_clave, 
+                                u.rol as lis_rol, 
+                                u.estado as lis_estado 
+                            FROM usuarios as u";
+           } else {
+                $consulta = "SELECT 
+                                u.usuario as lis_usuario, 
+                                u.clave as lis_clave, 
+                                u.rol as lis_rol, 
+                                u.estado as lis_estado 
+                            FROM usuarios as u WHERE u.usuario = '" . $dato_usuario[0]['usuario'] . "' AND u.rol = '" . $dato_usuario[0]['rol'] . "';";
+            }
 
             $sentencia = self::$pdofull->prepare($consulta);
 
@@ -125,8 +136,8 @@
         private static function Logear($obj)
         {
             $usuario = $_POST['datos'];
-            $consultaSQL = "SELECT u.usuario, u.estado FROM usuarios AS u WHERE u.usuario = '"
-                            . $usuario['username'] . "' AND u.clave = '" . $usuario['clave'] . "' AND u.estado = 1;";
+            $consultaSQL = "SELECT u.usuario, u.rol, u.estado FROM usuarios AS u where u.usuario = '" 
+            . $usuario['username'] . "' AND u.clave = '" . $usuario['clave'] . "';";
 
             $sentencia = self::$pdofull->prepare($consultaSQL);
 

@@ -1,6 +1,6 @@
 function listarUsers() {
     $.post('../../ApiREST/UsuariosCtrl/Listar',
-        { datos : null },
+        { datos : UsuarioActual },
         function (data) {
             if(data.estado == 1){
                 $('#users').html('');

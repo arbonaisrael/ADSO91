@@ -25,7 +25,7 @@
                         <li><a id="ControlPanelHipertension_Arterial" href="#cphipertension_arterial" class="inf">Hipertensión Arterial</a></li>
                         <li><a id="ControlPanelHipercolesterolemia" href="#cphipercolesterolemia" class="inf">Hipercolesterolemia</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a id="ControlPanelDiabetes" href="#cpdiabetes" class="inf">Diabetes</a></li>
+                        <li><a id="ControlPanelDeabetes" href="#cpdeabetes" class="inf">Diabetes</a></li>
                         <li><a id="ControlPanelObesidad" href="#cpobesidad" class="inf">Obesidad</a></li>
                     </ul>
                 </li>
@@ -617,6 +617,1262 @@
 
 </div>
 
+<!-- -------------------------------------------------- CUM PROGRAMAS ---------------------------------------------------- -->
+
+<div id="cpcum_programas" class="container center-block oculto">
+  <div id="alertas_cum_programas"> </div>
+
+  <h1 class="blue center title">Gestion y Control de Cumplimiento del Programa</h1>
+  <button class="btn btn-primary agregar" id="agregarCum_Programa">Nuevo Cum Programa<span
+      class="glyphicon glyphicon-plus"></span></button>
+
+  <div class="container">
+
+    <form class="form-horizontal hidden" id="EditarCum_Programa">
+
+      <div class="form-group">
+        <label for="ecpid_programa" class="col-sm-offset-3 col-sm-2 control-label">Id Programa:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="ecpid_programa" placeholder="Id Programa" required disabled>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ecpid_cedula" class="col-sm-offset-3 col-sm-2 control-label">Documento:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="ecpid_cedula">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ecpfec_ingreso" class="col-sm-offset-3 col-sm-2 control-label">Fec Ingreso:</label>
+        <div class="col-sm-4">
+          <div class="input-group date">
+            <input type="text" class="form-control" id="ecpfec_ingreso" placeholder="Fec Ingreso" required>
+            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ecpfec_egreso" class="col-sm-offset-3 col-sm-2 control-label">Fec Egreso:</label>
+        <div class="col-sm-4">
+          <div class="input-group date">
+            <input type="text" class="form-control" id="ecpfec_egreso" placeholder="Fec Egreso" required>
+            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ecpcausa_egreso" class="col-sm-offset-3 col-sm-2 control-label">Causa Egreso:</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="5" id="ecpcausa_egreso" placeholder="Descripcion de la causa"
+            required></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ecpfec_hospitalizacion" class="col-sm-offset-3 col-sm-2 control-label">Fec Hospitalizacion:</label>
+        <div class="col-sm-4">
+          <div class="input-group date">
+            <input type="text" class="form-control" id="ecpfec_hospitalizacion" placeholder="Fec Hospitalizacion"
+              required>
+            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="button" class="btn btn-default" id="CancelarActualizarCum_Programa">Cancelar</button>
+        <button type="submit" class="btn btn-success">Actualizar</button>
+      </div>
+    </form>
+
+    <form class="form-horizontal hidden" id="CrearNuevoCum_Programa">
+
+      <div class="form-group">
+        <label for="ncmid_programa" class="col-sm-offset-3 col-sm-2 control-label">Id Programa:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="ncmid_programa" placeholder="Id Programa" required disabled>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ncpid_cedula" class="col-sm-offset-3 col-sm-2 control-label">Documento:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="ncpid_cedula">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ncpfec_ingreso" class="col-sm-offset-3 col-sm-2 control-label">Fec Ingreso:</label>
+        <div class="col-sm-4">
+          <div class="input-group date">
+            <input type="text" class="form-control" id="ncpfec_ingreso" placeholder="Fec Ingreso" required>
+            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ncpfec_egreso" class="col-sm-offset-3 col-sm-2 control-label">Fec Egreso:</label>
+        <div class="col-sm-4">
+          <div class="input-group date">
+            <input type="text" class="form-control" id="ncpfec_egreso" placeholder="Fec Egreso" required>
+            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ncpcausa_egreso" class="col-sm-offset-3 col-sm-2 control-label">Causa Egreso:</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="5" id="ncpcausa_egreso" placeholder="Descripcion de la causa"
+            required></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ncpfec_hospitalizacion" class="col-sm-offset-3 col-sm-2 control-label">Fec Hospitalizacion:</label>
+        <div class="col-sm-4">
+          <div class="input-group date">
+            <input type="text" class="form-control" id="ncpfec_hospitalizacion" placeholder="Fec Hospitalizacion"
+              required>
+            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="button" class="btn btn-default" id="CancelarCrearCum_Programa">Cancelar</button>
+        <button type="submit" class="btn btn-success">Crear</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-responsive">
+    <table id="cum_programa_table" class="table table-hover">
+      <thead>
+        <tr class="blue">
+          <td>Documento</td>
+          <td>Paciente</td>
+          <td>Fec Ingreso</td>
+          <td>Fec Egreso</td>
+          <td>Fec Hospitalizacion</td>
+          <td>Editar</td>
+        </tr>
+      </thead>
+      <tbody id="Cum_Programas_detalle">
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- -------------------------------------------------- HIPERTENSION ARTERIAL ---------------------------------------------------- -->
+
+<div id="cphipertension_arterial" class="container center-block oculto">
+  <div id="alertas_cum_programas"> </div>
+
+  <h1 class="blue center title">Gestion y Control de Hipertension Arterial</h1>
+  <button class="btn btn-primary agregar" id="agregarHipertension_Arterial">Nuevo Hipertension Arterial <span
+      class="glyphicon glyphicon-plus"></span></button>
+
+  <div class="container">
+
+    <form class="form-horizontal hidden" id="EditarHipertension_Arterial">
+
+      <div class="form-group">
+        <label for="ehaid_hiper_arterial" class="col-sm-offset-3 col-sm-2 control-label">Id Hiper:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="ehaid_hiper_arterial" placeholder="Id Hiper" required disabled>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehaid_cedula" class="col-sm-offset-3 col-sm-2 control-label">Documento:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="ehaid_cedula">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehafec_realizacion_exa" class="col-sm-offset-3 col-sm-2 control-label">Fec Realizacion:</label>
+        <div class="col-sm-4">
+          <div class="input-group date">
+            <input type="text" class="form-control" id="ehafec_realizacion_exa" placeholder="Fec Realizacion" required>
+            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehacf_tensionales" class="col-sm-offset-3 col-sm-2 control-label">Cf Tensionales:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="ehacf_tensionales" placeholder="Id Hiper" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehatm_signos_vitales" class="col-sm-offset-3 col-sm-2 control-label">Tm Signos Vitales:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="ehatm_signos_vitales" placeholder="Tm Signos Vitales" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehacons_medico_general" class="col-sm-offset-3 col-sm-2 control-label">Cons Medico Gen:</label>
+        <div class="col-sm-4">
+          <select id="ehacons_medico_general" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehacons_enfermeria" class="col-sm-offset-3 col-sm-2 control-label">Cons Enfermeria:</label>
+        <div class="col-sm-4">
+          <select id="ehacons_enfermeria" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehacons_nutricion" class="col-sm-offset-3 col-sm-2 control-label">Cons Nutricion:</label>
+        <div class="col-sm-4">
+          <select id="ehacons_nutricion" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehaglicemia_basal" class="col-sm-offset-3 col-sm-2 control-label">Glicemia Basal:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehaglicemia_basal" placeholder="Glicemial Basal" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehahemoglobin" class="col-sm-offset-3 col-sm-2 control-label">Hemoglobin:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehahemoglobin" placeholder="Hemoglobin" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehahematocritos" class="col-sm-offset-3 col-sm-2 control-label">Hematocritos:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehahematocritos" placeholder="Hematocritos" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehacolesterol_total" class="col-sm-offset-3 col-sm-2 control-label">Colesterol Total:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehacolesterol_total" placeholder="Colesterol Total" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehacolesterol_hdl" class="col-sm-offset-3 col-sm-2 control-label">Colesterol Hdl:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehacolesterol_hdl" placeholder="Colesterol Hdl" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehatrigliceridos" class="col-sm-offset-3 col-sm-2 control-label">Trigliceridos:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehatrigliceridos" placeholder="Trigliceridos" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehapotasio" class="col-sm-offset-3 col-sm-2 control-label">Potasio:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehapotasio" placeholder="Potasio" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehacreatinina" class="col-sm-offset-3 col-sm-2 control-label">Creatinina:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehacreatinina" placeholder="Creatinina" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehauroanalisis" class="col-sm-offset-3 col-sm-2 control-label">Uroanalisis:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="ehauroanalisis" placeholder="Uroanalisis" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehaekg" class="col-sm-offset-3 col-sm-2 control-label">Ekg:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="ehaekg" placeholder="Ekg" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehaid_medicamento" class="col-sm-offset-3 col-sm-2 control-label">Medicamento:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="ehaid_medicamento">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehaedu_grupal" class="col-sm-offset-3 col-sm-2 control-label">Edu Grupal:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="ehaedu_grupal" placeholder="Edu Grupal" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehaobservaciones" class="col-sm-offset-3 col-sm-2 control-label">Observaciones:</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="5" id="ehaobservaciones" placeholder="Observaciones" required></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehaacciones_realizar" class="col-sm-offset-3 col-sm-2 control-label">Acciones:</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="5" id="ehaacciones_realizar" placeholder="Acciones a realizar"
+            required></textarea>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <button type="button" class="btn btn-default" id="CancelarActualizarHipertension_Arterial">Cancelar</button>
+        <button type="submit" class="btn btn-success">Actualizar</button>
+      </div>
+    </form>
+
+    <form class="form-horizontal hidden" id="CrearNuevoHipertension_Arterial">
+
+      <div class="form-group">
+        <label for="nhaid_hiper_arterial" class="col-sm-offset-3 col-sm-2 control-label">Id Hiper:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="nhaid_hiper_arterial" placeholder="Id Hiper" required disabled>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhaid_cedula" class="col-sm-offset-3 col-sm-2 control-label">Documento:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="nhaid_cedula">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhafec_realizacion_exa" class="col-sm-offset-3 col-sm-2 control-label">Fec Realizacion:</label>
+        <div class="col-sm-4">
+          <div class="input-group date">
+            <input type="text" class="form-control" id="nhafec_realizacion_exa" placeholder="Fec Realizacion" required>
+            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhacf_tensionales" class="col-sm-offset-3 col-sm-2 control-label">Cf Tensionales:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="nhacf_tensionales" placeholder="Id Hiper" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhatm_signos_vitales" class="col-sm-offset-3 col-sm-2 control-label">Tm Signos Vitales:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="nhatm_signos_vitales" placeholder="Tm Signos Vitales" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhacons_medico_general" class="col-sm-offset-3 col-sm-2 control-label">Cons Medico Gen:</label>
+        <div class="col-sm-4">
+          <select id="nhacons_medico_general" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhacons_enfermeria" class="col-sm-offset-3 col-sm-2 control-label">Cons Enfermeria:</label>
+        <div class="col-sm-4">
+          <select id="nhacons_enfermeria" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhacons_nutricion" class="col-sm-offset-3 col-sm-2 control-label">Cons Nutricion:</label>
+        <div class="col-sm-4">
+          <select id="nhacons_nutricion" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhaglicemia_basal" class="col-sm-offset-3 col-sm-2 control-label">Glicemia Basal:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhaglicemia_basal" placeholder="Glicemial Basal" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhahemoglobin" class="col-sm-offset-3 col-sm-2 control-label">Hemoglobin:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhahemoglobin" placeholder="Hemoglobin" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhahematocritos" class="col-sm-offset-3 col-sm-2 control-label">Hematocritos:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhahematocritos" placeholder="Hematocritos" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhacolesterol_total" class="col-sm-offset-3 col-sm-2 control-label">Colesterol Total:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhacolesterol_total" placeholder="Colesterol Total" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhacolesterol_hdl" class="col-sm-offset-3 col-sm-2 control-label">Colesterol Hdl:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhacolesterol_hdl" placeholder="Colesterol Hdl" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhatrigliceridos" class="col-sm-offset-3 col-sm-2 control-label">Trigliceridos:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhatrigliceridos" placeholder="Trigliceridos" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhapotasio" class="col-sm-offset-3 col-sm-2 control-label">Potasio:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhapotasio" placeholder="Potasio" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhacreatinina" class="col-sm-offset-3 col-sm-2 control-label">Creatinina:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhacreatinina" placeholder="Creatinina" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhauroanalisis" class="col-sm-offset-3 col-sm-2 control-label">Uroanalisis:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="nhauroanalisis" placeholder="Uroanalisis" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhaekg" class="col-sm-offset-3 col-sm-2 control-label">Ekg:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="nhaekg" placeholder="Ekg" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhaid_medicamento" class="col-sm-offset-3 col-sm-2 control-label">Medicamento:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="nhaid_medicamento">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhaedu_grupal" class="col-sm-offset-3 col-sm-2 control-label">Edu Grupal:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="nhaedu_grupal" placeholder="Edu Grupal" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhaobservaciones" class="col-sm-offset-3 col-sm-2 control-label">Observaciones:</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="5" id="nhaobservaciones" placeholder="Observaciones" required></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhaacciones_realizar" class="col-sm-offset-3 col-sm-2 control-label">Acciones:</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="5" id="nhaacciones_realizar" placeholder="Acciones a realizar"
+            required></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="button" class="btn btn-default" id="CancelarCrearHipertension_Arterial">Cancelar</button>
+        <button type="submit" class="btn btn-success">Crear</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-responsive">
+    <table id="Hipertension_Arterial_table" class="table table-hover">
+      <thead>
+        <tr class="blue">
+          <td>Documento</td>
+          <td>Paciente</td>
+          <td>Fec Realizacion</td>
+          <td>Cons Medico</td>
+          <td>Cons Enfermeria</td>
+          <td>Cons Nutricion</td>
+          <td>Medicamento</td>
+          <td>Editar</td>
+        </tr>
+      </thead>
+      <tbody id="Hipertension_Arterial_detalle">
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- -------------------------------------------------- HIPERCOLESTEROLEMIA ---------------------------------------------------- -->
+
+<div id="cphipercolesterolemia" class="container center-block oculto">
+  <div id="alertas_hipercolesterolemia"> </div>
+
+  <h1 class="blue center title">Gestion y Control de Hipercolesterolemia</h1>
+  <button class="btn btn-primary agregar" id="agregarHipercolesterolemia">Nuevo Hipercolesterolemia <span
+      class="glyphicon glyphicon-plus"></span></button>
+
+  <div class="container">
+
+    <form class="form-horizontal hidden" id="EditarHipercolesterolemia">
+
+      <div class="form-group">
+        <label for="ehid_hipercolesterolemia" class="col-sm-offset-3 col-sm-2 control-label">Id Hiper:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="ehid_hipercolesterolemia" placeholder="Id Hiper" required
+            disabled>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehid_cedula" class="col-sm-offset-3 col-sm-2 control-label">Documento:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="ehid_cedula">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehfec_realizacion_exa" class="col-sm-offset-3 col-sm-2 control-label">Fec Realizacion:</label>
+        <div class="col-sm-4">
+          <div class="input-group date">
+            <input type="text" class="form-control" id="ehfec_realizacion_exa" placeholder="Fec Realizacion" required>
+            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehcons_medico_general" class="col-sm-offset-3 col-sm-2 control-label">Cons Medico Gen:</label>
+        <div class="col-sm-4">
+          <select id="ehcons_medico_general" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehcons_enfermeria" class="col-sm-offset-3 col-sm-2 control-label">Cons Enfermeria:</label>
+        <div class="col-sm-4">
+          <select id="ehcons_enfermeria" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehcons_nutricion" class="col-sm-offset-3 col-sm-2 control-label">Cons Nutricion:</label>
+        <div class="col-sm-4">
+          <select id="ehcons_nutricion" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehglicemia_basal" class="col-sm-offset-3 col-sm-2 control-label">Glicemia Basal:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehglicemia_basal" placeholder="Glicemial Basal" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehhemoglobin" class="col-sm-offset-3 col-sm-2 control-label">Hemoglobin:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehhemoglobin" placeholder="Hemoglobin" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehhematocritos" class="col-sm-offset-3 col-sm-2 control-label">Hematocritos:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehhematocritos" placeholder="Hematocritos" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehcolesterol_total" class="col-sm-offset-3 col-sm-2 control-label">Colesterol Total:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehcolesterol_total" placeholder="Colesterol Total" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehcolesterol_hdl" class="col-sm-offset-3 col-sm-2 control-label">Colesterol Hdl:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehcolesterol_hdl" placeholder="Colesterol Hdl" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehtrigliceridos" class="col-sm-offset-3 col-sm-2 control-label">Trigliceridos:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehtrigliceridos" placeholder="Trigliceridos" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehcreatinina" class="col-sm-offset-3 col-sm-2 control-label">Creatinina:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ehcreatinina" placeholder="Creatinina" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehuroanalisis" class="col-sm-offset-3 col-sm-2 control-label">Uroanalisis:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="ehuroanalisis" placeholder="Uroanalisis" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehekg" class="col-sm-offset-3 col-sm-2 control-label">Ekg:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="ehekg" placeholder="Ekg" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehid_medicamento1" class="col-sm-offset-3 col-sm-2 control-label">Medicamento 1:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="ehid_medicamento1">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehid_medicamento2" class="col-sm-offset-3 col-sm-2 control-label">Medicamento 2:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="ehid_medicamento2">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehedu_grupal" class="col-sm-offset-3 col-sm-2 control-label">Edu Grupal:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="ehedu_grupal" placeholder="Edu Grupal" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehobservaciones" class="col-sm-offset-3 col-sm-2 control-label">Observaciones:</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="5" id="ehobservaciones" placeholder="Observaciones" required></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ehacciones_realizar" class="col-sm-offset-3 col-sm-2 control-label">Acciones:</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="5" id="ehacciones_realizar" placeholder="Acciones a realizar"
+            required></textarea>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <button type="button" class="btn btn-default" id="CancelarActualizarHipercolesterolemia">Cancelar</button>
+        <button type="submit" class="btn btn-success">Actualizar</button>
+      </div>
+    </form>
+
+    <form class="form-horizontal hidden" id="CrearNuevoHipercolesterolemia">
+
+      <div class="form-group">
+        <label for="nhid_hipercolesterolemia" class="col-sm-offset-3 col-sm-2 control-label">Id Hiper:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="nhid_hipercolesterolemia" placeholder="Id Hiper" required
+            disabled>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhid_cedula" class="col-sm-offset-3 col-sm-2 control-label">Documento:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="nhid_cedula">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhfec_realizacion_exa" class="col-sm-offset-3 col-sm-2 control-label">Fec Realizacion:</label>
+        <div class="col-sm-4">
+          <div class="input-group date">
+            <input type="text" class="form-control" id="nhfec_realizacion_exa" placeholder="Fec Realizacion" required>
+            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhcons_medico_general" class="col-sm-offset-3 col-sm-2 control-label">Cons Medico Gen:</label>
+        <div class="col-sm-4">
+          <select id="nhcons_medico_general" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhcons_enfermeria" class="col-sm-offset-3 col-sm-2 control-label">Cons Enfermeria:</label>
+        <div class="col-sm-4">
+          <select id="nhcons_enfermeria" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhcons_nutricion" class="col-sm-offset-3 col-sm-2 control-label">Cons Nutricion:</label>
+        <div class="col-sm-4">
+          <select id="nhcons_nutricion" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhglicemia_basal" class="col-sm-offset-3 col-sm-2 control-label">Glicemia Basal:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhglicemia_basal" placeholder="Glicemial Basal" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhhemoglobin" class="col-sm-offset-3 col-sm-2 control-label">Hemoglobin:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhhemoglobin" placeholder="Hemoglobin" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhhematocritos" class="col-sm-offset-3 col-sm-2 control-label">Hematocritos:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhhematocritos" placeholder="Hematocritos" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhcolesterol_total" class="col-sm-offset-3 col-sm-2 control-label">Colesterol Total:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhcolesterol_total" placeholder="Colesterol Total" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhcolesterol_hdl" class="col-sm-offset-3 col-sm-2 control-label">Colesterol Hdl:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhcolesterol_hdl" placeholder="Colesterol Hdl" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhtrigliceridos" class="col-sm-offset-3 col-sm-2 control-label">Trigliceridos:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhtrigliceridos" placeholder="Trigliceridos" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhcreatinina" class="col-sm-offset-3 col-sm-2 control-label">Creatinina:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="nhcreatinina" placeholder="Creatinina" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhuroanalisis" class="col-sm-offset-3 col-sm-2 control-label">Uroanalisis:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="nhuroanalisis" placeholder="Uroanalisis" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhekg" class="col-sm-offset-3 col-sm-2 control-label">Ekg:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="nhekg" placeholder="Ekg" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhid_medicamento1" class="col-sm-offset-3 col-sm-2 control-label">Medicamento 1:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="nhid_medicamento1">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhid_medicamento2" class="col-sm-offset-3 col-sm-2 control-label">Medicamento 2:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="nhid_medicamento2">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhedu_grupal" class="col-sm-offset-3 col-sm-2 control-label">Edu Grupal:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="nhedu_grupal" placeholder="Edu Grupal" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhobservaciones" class="col-sm-offset-3 col-sm-2 control-label">Observaciones:</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="5" id="nhobservaciones" placeholder="Observaciones" required></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nhacciones_realizar" class="col-sm-offset-3 col-sm-2 control-label">Acciones:</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="5" id="nhacciones_realizar" placeholder="Acciones a realizar"
+            required></textarea>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <button type="button" class="btn btn-default" id="CancelarCrearHipercolesterolemia">Cancelar</button>
+        <button type="submit" class="btn btn-success">Crear</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-responsive">
+    <table id="Hipercolesterolemia_table" class="table table-hover">
+      <thead>
+        <tr class="blue">
+          <td>Documento</td>
+          <td>Paciente</td>
+          <td>Fec Realizacion</td>
+          <td>Cons Medico</td>
+          <td>Cons Enfermeria</td>
+          <td>Cons Nutricion</td>
+          <td>Medicamento 1</td>
+          <td>Editar</td>
+        </tr>
+      </thead>
+      <tbody id="Hipercolesterolemia_detalle">
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- -------------------------------------------------- DEABETES ---------------------------------------------------- -->
+
+<div id="cpdeabetes" class="container center-block oculto">
+  <div id="alertas_deabetes"> </div>
+
+  <h1 class="blue center title">Gestion y Control de Deabetes</h1>
+  <button class="btn btn-primary agregar" id="agregarDeabetes">Nuevo Deabetes <span
+      class="glyphicon glyphicon-plus"></span></button>
+
+  <div class="container">
+
+    <form class="form-horizontal hidden" id="EditarDeabetes">
+
+      <div class="form-group">
+        <label for="edid_deabetes" class="col-sm-offset-3 col-sm-2 control-label">Id Deabetes:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="edid_deabetes" placeholder="Id Hiper" required disabled>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edid_cedula" class="col-sm-offset-3 col-sm-2 control-label">Documento:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="edid_cedula">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edfec_realizacion_exa" class="col-sm-offset-3 col-sm-2 control-label">Fec Realizacion:</label>
+        <div class="col-sm-4">
+          <div class="input-group date">
+            <input type="text" class="form-control" id="edfec_realizacion_exa" placeholder="Fec Realizacion" required>
+            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edcons_medico_general" class="col-sm-offset-3 col-sm-2 control-label">Cons Medico Gen:</label>
+        <div class="col-sm-4">
+          <select id="edcons_medico_general" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edcons_enfermeria" class="col-sm-offset-3 col-sm-2 control-label">Cons Enfermeria:</label>
+        <div class="col-sm-4">
+          <select id="edcons_enfermeria" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edcons_nutricion" class="col-sm-offset-3 col-sm-2 control-label">Cons Nutricion:</label>
+        <div class="col-sm-4">
+          <select id="edcons_nutricion" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edhemoglobina" class="col-sm-offset-3 col-sm-2 control-label">Hemoglobina:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="edhemoglobina" placeholder="Hemoglobina" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edcolesterol_total" class="col-sm-offset-3 col-sm-2 control-label">Colesterol Total:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="edcolesterol_total" placeholder="Colesterol Total" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edcolesterol_hdl" class="col-sm-offset-3 col-sm-2 control-label">Colesterol Hdl:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="edcolesterol_hdl" placeholder="Colesterol Hdl" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edtrigliceridos" class="col-sm-offset-3 col-sm-2 control-label">Trigliceridos:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="edtrigliceridos" placeholder="Trigliceridos" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edcreatinina" class="col-sm-offset-3 col-sm-2 control-label">Creatinina:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="edcreatinina" placeholder="Creatinina" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="eduroanalisis" class="col-sm-offset-3 col-sm-2 control-label">Uroanalisis:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="eduroanalisis" placeholder="Uroanalisis" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edekg" class="col-sm-offset-3 col-sm-2 control-label">Ekg:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="edekg" placeholder="Ekg" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edid_medicamento1" class="col-sm-offset-3 col-sm-2 control-label">Medicamento 1:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="edid_medicamento1">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edid_medicamento2" class="col-sm-offset-3 col-sm-2 control-label">Medicamento 2:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="edid_medicamento2">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ededu_grupal" class="col-sm-offset-3 col-sm-2 control-label">Edu Grupal:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="ededu_grupal" placeholder="Edu Grupal" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edobservaciones" class="col-sm-offset-3 col-sm-2 control-label">Observaciones:</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="5" id="edobservaciones" placeholder="Observaciones" required></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edacciones_realizar" class="col-sm-offset-3 col-sm-2 control-label">Acciones:</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="5" id="edacciones_realizar" placeholder="Acciones a realizar"
+            required></textarea>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <button type="button" class="btn btn-default" id="CancelarActualizarDeabetes">Cancelar</button>
+        <button type="submit" class="btn btn-success">Actualizar</button>
+      </div>
+    </form>
+
+    <form class="form-horizontal hidden" id="CrearNuevoDeabetes">
+
+      <div class="form-group">
+        <label for="ndid_deabetes" class="col-sm-offset-3 col-sm-2 control-label">Id Deabetes:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="ndid_deabetes" placeholder="Id Hiper" required disabled>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndid_cedula" class="col-sm-offset-3 col-sm-2 control-label">Documento:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="ndid_cedula">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndfec_realizacion_exa" class="col-sm-offset-3 col-sm-2 control-label">Fec Realizacion:</label>
+        <div class="col-sm-4">
+          <div class="input-group date">
+            <input type="text" class="form-control" id="ndfec_realizacion_exa" placeholder="Fec Realizacion" required>
+            <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndcons_medico_general" class="col-sm-offset-3 col-sm-2 control-label">Cons Medico Gen:</label>
+        <div class="col-sm-4">
+          <select id="ndcons_medico_general" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndcons_enfermeria" class="col-sm-offset-3 col-sm-2 control-label">Cons Enfermeria:</label>
+        <div class="col-sm-4">
+          <select id="ndcons_enfermeria" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndcons_nutricion" class="col-sm-offset-3 col-sm-2 control-label">Cons Nutricion:</label>
+        <div class="col-sm-4">
+          <select id="ndcons_nutricion" class="form-control">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndhemoglobina" class="col-sm-offset-3 col-sm-2 control-label">Hemoglobina:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ndhemoglobina" placeholder="Hemoglobina" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndcolesterol_total" class="col-sm-offset-3 col-sm-2 control-label">Colesterol Total:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ndcolesterol_total" placeholder="Colesterol Total" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndcolesterol_hdl" class="col-sm-offset-3 col-sm-2 control-label">Colesterol Hdl:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ndcolesterol_hdl" placeholder="Colesterol Hdl" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndtrigliceridos" class="col-sm-offset-3 col-sm-2 control-label">Trigliceridos:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ndtrigliceridos" placeholder="Trigliceridos" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndcreatinina" class="col-sm-offset-3 col-sm-2 control-label">Creatinina:</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="ndcreatinina" placeholder="Creatinina" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nduroanalisis" class="col-sm-offset-3 col-sm-2 control-label">Uroanalisis:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="nduroanalisis" placeholder="Uroanalisis" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndekg" class="col-sm-offset-3 col-sm-2 control-label">Ekg:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="ndekg" placeholder="Ekg" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndid_medicamento1" class="col-sm-offset-3 col-sm-2 control-label">Medicamento 1:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="ndid_medicamento1">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndid_medicamento2" class="col-sm-offset-3 col-sm-2 control-label">Medicamento 2:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="ndid_medicamento2">
+            <option value="">Default</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndedu_grupal" class="col-sm-offset-3 col-sm-2 control-label">Edu Grupal:</label>
+        <div class="col-sm-4">
+          <input type="Text" class="form-control" id="ndedu_grupal" placeholder="Edu Grupal" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndobservaciones" class="col-sm-offset-3 col-sm-2 control-label">Observaciones:</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="5" id="ndobservaciones" placeholder="Observaciones" required></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ndacciones_realizar" class="col-sm-offset-3 col-sm-2 control-label">Acciones:</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" rows="5" id="ndacciones_realizar" placeholder="Acciones a realizar"
+            required></textarea>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <button type="button" class="btn btn-default" id="CancelarCrearDeabetes">Cancelar</button>
+        <button type="submit" class="btn btn-success">Crear</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-responsive">
+    <table id="Deabetes_table" class="table table-hover">
+      <thead>
+        <tr class="blue">
+          <td>Documento</td>
+          <td>Paciente</td>
+          <td>Fec Realizacion</td>
+          <td>Cons Medico</td>
+          <td>Cons Enfermeria</td>
+          <td>Cons Nutricion</td>
+          <td>Medicamento 1</td>
+          <td>Editar</td>
+        </tr>
+      </thead>
+      <tbody id="Deabetes_detalle">
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <script src="js/PaneldeControl.js"></script>
 <script src="js/PaneldeControlUsers.js"></script>
@@ -624,3 +1880,7 @@
 <script src="js/PaneldeControlCiudades.js"></script>
 <script src="js/PaneldeControlMedicamentos.js"></script>
 <script src="js/PaneldeControlPacientes.js"></script>
+<script src="js/PaneldeControlCum_Programas.js"></script>
+<script src="js/PaneldeControlHipertension_Arterial.js"></script>
+<script src="js/PaneldeControlHipercolesterolemia.js"></script>
+<script src="js/PaneldeControlDeabetes.js"></script>

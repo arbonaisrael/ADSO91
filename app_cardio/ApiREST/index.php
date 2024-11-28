@@ -8,8 +8,10 @@
     require_once 'Controladores/CiudadesCtrl.php';
     require_once 'Controladores/MedicamentosCtrl.php';
     require_once 'Controladores/PacientesCtrl.php';
-
-
+    require_once 'Controladores/Cum_ProgramasCtrl.php';
+    require_once 'Controladores/Hipertension_ArterialCtrl.php';
+    require_once 'Controladores/HipercolesterolemiaCtrl.php'; 
+    require_once 'Controladores/DeabetesCtrl.php';
 	
 	header ( 'content-type: application/json; charset=utf-8' );             // * Definimos que sera una aplicación de tipo JSON
 	header ( 'Access-Control-Allow-Origin: *' );                            // * Permitimos el acceso a todos los clientes
@@ -27,7 +29,11 @@
             'BarriosCtrl',
             'CiudadesCtrl',
             'MedicamentosCtrl',
-            'PacientesCtrl'
+            'PacientesCtrl',
+            'Cum_ProgramasCtrl',
+            'Hipertension_ArterialCtrl',
+            'HipercolesterolemiaCtrl',
+            'DeabetesCtrl'
         );
 
         if ( in_array( $recurso, $recursos_existentes ) ) {
@@ -48,6 +54,18 @@
                         break;
                     case 'PacientesCtrl':
                         $instancia = new PacientesCtrl( $peticion );
+                        break;
+                    case 'Cum_ProgramasCtrl':
+                        $instancia = new Cum_ProgramasCtrl($peticion);
+                        break;
+                    case 'Hipertension_ArterialCtrl':
+                        $instancia = new Hipertension_ArterialCtrl($peticion);
+                        break;
+                    case 'HipercolesterolemiaCtrl':
+                        $instancia = new HipercolesterolemiaCtrl($peticion);
+                        break;
+                    case 'DeabetesCtrl':
+                        $instancia = new DeabetesCtrl($peticion);
                         break;
                 }
                 $respuesta = $instancia->respuesta;
