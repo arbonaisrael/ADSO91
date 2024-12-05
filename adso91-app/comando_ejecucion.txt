@@ -1,0 +1,46 @@
+
+-- INSTALAR COMPOSER
+
+https://getcomposer.org/download/
+
+-- INSTALAR NODE JS
+
+https://nodejs.org/en
+
+
+
+Para poder ver la política actual de ejecución abriremos PowerShell a nivel administrador. Para ello deberemos hacer clic en Inicio, escribir “Windows PowerShell”, hacer clic con el botón derecho encima de la aplicación y finalmente hacer clic en “Ejecutar como administrador”.
+
+
+Get-ExecutionPolicy -List
+
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+
+Si volvemos a listar los permisos podremos ver que el resultado ha cambiado y para el usuario actual la política de ejecución tiene el valor “RemoteSigned”.
+
+
+-- INSTALACION DE LARAVEL 9
+composer create-project --prefer-dist laravel/laravel:^9.* adso7677-app
+
+
+-- INSTALAR LA AUTENTICACION
+
+-- Ejecutemos el siguiente comando para instalar el paquete laravel ui con el siguiente comando
+composer require laravel/ui
+
+
+php artisan ui bootstrap --auth
+
+
+
+
+
+php artisan cache:clear
+php artisan config:clear
+
+
+-- 	MIGRACIONES EN LARAVEL
+
+php artisan migrate
